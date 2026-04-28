@@ -57,3 +57,7 @@ The system uses PDF.js for rendering PDFs and pdf-lib for editing and exporting,
 ---
 
 ## 🧠 System Overview
+🤝 Contributing
+
+Contributions are welcome!
+Feel free to fork the repo and submit a pull request.
