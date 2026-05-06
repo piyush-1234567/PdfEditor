@@ -1,63 +1,147 @@
-# 📄 PDF Editor (Web-Based)
+# 📄 PDF Editor — Browser-Based
+
+> A fast, lightweight PDF editor that runs entirely in your browser. Annotate, highlight, draw, and export — no subscriptions, no installations, no bloat.
+
+![React](https://img.shields.io/badge/React-Frontend-blue)
+![PDF.js](https://img.shields.io/badge/PDF.js-Rendering-green)
+![pdf-lib](https://img.shields.io/badge/pdf--lib-Editing-purple)
+![License](https://img.shields.io/badge/License-MIT-orange)
+
+---
 
 ## 🧩 Problem Statement
 
-Modern users frequently need to perform quick edits on PDF documents such as adding notes, highlighting content, or making minor modifications. However, most existing solutions like Adobe Acrobat are:
+Most PDF tools are expensive, heavyweight, or locked behind subscriptions. Users who just need to add a quick annotation or highlight a section shouldn't have to install Adobe Acrobat or pay monthly fees.
 
-- Expensive or subscription-based  
-- Heavy and resource-intensive  
-- Overloaded with unnecessary features  
-- Not easily accessible for quick, browser-based use  
+Common pain points with existing solutions:
 
-As a result, users face difficulty performing simple PDF edits efficiently without installing bulky software or paying for premium tools.
-
----
-
-## 💡 Proposed Solution
-
-This project introduces a lightweight, browser-based PDF editor that allows users to perform essential PDF operations easily and efficiently.
-
-The application enables users to:
-
-- Upload and view PDF documents directly in the browser  
-- Add text annotations anywhere on the document  
-- Highlight important sections  
-- Draw or mark on PDF pages  
-- Export the edited document instantly  
-
-The system uses PDF.js for rendering PDFs and pdf-lib for editing and exporting, ensuring a fast and seamless experience without requiring installation.
+- 💸 **Expensive or subscription-based** — tools like Adobe Acrobat charge monthly fees for basic functionality
+- 🖥️ **Heavy software installs** — resource-intensive applications just for simple edits
+- 🧩 **Feature overload** — bloated interfaces with tools most users never need
+- 🌐 **No good browser option** — most web-based tools are limited or require account sign-ups
 
 ---
 
-## 🎯 Project Goals
+## 💡 Solution
 
-- Build a simple and accessible PDF editing tool  
-- Demonstrate real-world system design and frontend development skills  
-- Handle structured document manipulation efficiently  
+This project is a lightweight, browser-based PDF editor built with React, PDF.js, and pdf-lib. It gives users the tools they actually need — without the overhead.
 
 ---
 
 ## 🚀 Key Features
 
-- 📂 Upload and view PDF files  
-- ✏️ Add text annotations  
-- 🖍️ Highlight content  
-- 🖊️ Draw on PDF pages  
-- 💾 Download edited PDF  
+| Feature | Description |
+|---|---|
+| 📂 **Upload & view** | Open any PDF directly in the browser with full page rendering |
+| ✏️ **Text annotations** | Add notes and labels anywhere on the document |
+| 🖍️ **Highlighting** | Mark important sections with color highlights |
+| 🖊️ **Free drawing** | Sketch and mark up pages with a freehand tool |
+| 💾 **Export & download** | Save the edited PDF instantly to your device |
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Frontend: React  
-- PDF Rendering: PDF.js  
-- PDF Editing: pdf-lib  
-- Backend (optional): Node.js  
+| Layer | Technology | Purpose |
+|---|---|---|
+| Frontend | React | UI and component management |
+| PDF Rendering | PDF.js | Displaying PDF pages in the browser |
+| PDF Editing | pdf-lib | Modifying and exporting PDF documents |
+| Backend | Node.js *(optional)* | Server-side processing if needed |
 
 ---
 
-## 🧠 System Overview
-🤝 Contributing
+## 🗂️ Project Structure
 
-Contributions are welcome!
-Feel free to fork the repo and submit a pull request.
+```
+pdf-editor/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── PDFViewer.jsx       # Renders PDF pages using PDF.js
+│   │   ├── Toolbar.jsx         # Annotation and drawing tools
+│   │   └── ExportButton.jsx    # Handles PDF export via pdf-lib
+│   ├── hooks/
+│   │   └── usePDFEditor.js     # Core editor logic
+│   ├── App.jsx
+│   └── index.js
+├── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+- Node.js v16 or higher
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/pdf-editor.git
+
+# Navigate to the project directory
+cd pdf-editor
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### Build for production
+
+```bash
+npm run build
+```
+
+---
+
+## 🎯 Project Goals
+
+- Build a simple and accessible PDF editing tool for everyday use
+- Demonstrate real-world system design and frontend development skills
+- Handle structured document manipulation efficiently in the browser
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Upload and render PDF files
+- [x] Add text annotations
+- [x] Highlight content
+- [x] Freehand drawing tool
+- [x] Export edited PDF
+- [ ] Undo / redo support
+- [ ] Multi-page navigation
+- [ ] Mobile-responsive layout
+- [ ] Cloud save integration
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Whether it's a bug fix, new feature, or documentation improvement — all contributions are appreciated.
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/your-feature-name`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/your-feature-name`
+5. Open a pull request
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+> Built with ❤️ using React, PDF.js, and pdf-lib.
