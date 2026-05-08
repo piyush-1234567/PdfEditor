@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 
 
 const upload = multer({storage});   
-app.post("/uploade", upload.single("pdf"), (req,res)=>{
+app.post("/upload", upload.single("pdf"), (req,res)=>{
     res.json({
         message: "File uploaded successfully",
         filepath: req.file.path
