@@ -72,7 +72,7 @@ app.use("/files",express.static("uploads"));
 app.get("/",(req,res) =>{
     res.send("Server is Running ...");
 });
-
+// just a normal day
 const PORT = 5000;
 app.listen(PORT, ()=>{
     console.log(`Server is running on port : ${PORT}`);
