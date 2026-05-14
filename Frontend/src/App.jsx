@@ -1,7 +1,8 @@
+import Navbar from "./components/navbar"
 export default function App(){
   return (
     <div>
-      <h1>pdfEditor</h1>
+      <Navbar />
     </div>
   )
 }
