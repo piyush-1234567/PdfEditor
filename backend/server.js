@@ -1,3 +1,4 @@
+// thunder client doesn't work on this 
 const express = require("express");  // import expressjs library
 const cors = require("cors"); // import cors 
 const app = express(); // create your server instance 
