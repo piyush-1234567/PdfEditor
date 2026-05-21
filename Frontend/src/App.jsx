@@ -1,8 +1,11 @@
 import Navbar from "./components/navbar"
-export default function App(){
+import UploadPdf from "./components/UploadPdf"
+function App(){
   return (
     <div>
       <Navbar />
+      <UploadPdf />
     </div>
   )
 }
+export default App;
