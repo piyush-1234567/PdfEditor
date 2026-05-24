@@ -1,4 +1,8 @@
 import {useState} from 'react';
+import * as pdfjsLib from 'pdfjs-dist';
+pdfjsLib.GlobalWorkerOptions.workerSrc = 
+  `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+
 export default function UploadPdf(){
     const [pdfFile, setPdfFile] = useState(null);
     // grab the first file user selected and console it to the browser
@@ -6,6 +10,8 @@ export default function UploadPdf(){
         const file = e.target.files[0];
         setPdfFile(file);
         const arrayBuffer = await file.arrayBuffer();
+        const loadingTask = pdfjsLib.getDocument({data: arrayBuffer});
+        const pdfDoc = await loadingTask.promise;
         console.log(file);
     }
     return (
