@@ -35,31 +35,9 @@ export default function UploadPdf(){
         }
         console.log("All pages rendered")
     };
-
-        
-
-        
-        
-
-
-        // get canvas
-        const canvas = canvasRef.current;
-        const context = canvas.getContext('2d');
-
-
-         // set canvas size
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-         // render pdf page
-        await page.render({
-            canvasContext: context,
-            viewport: viewport,
-        }).promise;
-
         console.log("PDF Rendered");
-        console.log(file);
-    }
+        
+    
     return (
         
         <div>
@@ -71,10 +49,10 @@ export default function UploadPdf(){
                 accept=".pdf" 
                 onChange={handleFile}
             />
-            <canvas ref={containerRef}
+            <div ref={containerRef}
             style={{border: "1px solid black"}}>
                 
-            </canvas>
+            </div>
         </div>
     )
 }
