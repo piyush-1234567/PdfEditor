@@ -31,7 +31,16 @@ export default function UploadPdf(){
                 canvasContext: context,
                 viewport: viewport,
             }).promise;
-            containerRef.current.appendChild(canvas);
+
+            const pageDiv = document.createElement("div");
+
+            pageDiv.style.position = "relative";
+            pageDiv.style.width = `${viewport.width}px`;
+            pageDiv.style.height = `${viewport.height}px`;
+
+            pageDiv.appendChild(canvas);
+
+            containerRef.current.appendChild(pageDiv);
         }
         console.log("All pages rendered")
     };
