@@ -18,6 +18,9 @@ export default function UploadPdf(){
         containerRef.current.innerHTML = "";
         for(let i = 1; i <= pdfDoc.numPages; i++){
             const page = await pdfDoc.getPage(i);
+
+            const textContent = await page.getTextContent();
+            console.log(textContent.items[0].str);
             const canvas = document.createElement('canvas');
             const scale = 1.5;
 
