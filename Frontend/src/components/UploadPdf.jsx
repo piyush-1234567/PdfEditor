@@ -46,6 +46,7 @@ export default function UploadPdf(){
             containerRef.current.appendChild(pageDiv);
         }
         console.log("All pages rendered")
+        console.log("Everything is fine")
     };
         console.log("PDF Rendered");
         
