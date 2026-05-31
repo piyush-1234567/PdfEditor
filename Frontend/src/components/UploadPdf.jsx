@@ -19,8 +19,8 @@ export default function UploadPdf(){
         for(let i = 1; i <= pdfDoc.numPages; i++){
             const page = await pdfDoc.getPage(i);
 
-            const textContent = await page.getTextContent();
-            console.log(textContent.items[0].str);
+            
+        
             const canvas = document.createElement('canvas');
             const scale = 1.5;
 
@@ -42,6 +42,12 @@ export default function UploadPdf(){
             pageDiv.style.height = `${viewport.height}px`;
 
             pageDiv.appendChild(canvas);
+            const textContent = await page.getTextContent();
+            textContent.items.forEach(item =>{
+                const span = document.createElement("span");
+                span.innerHTML = item.str;
+                pageDiv.appendChild(span);
+            })
 
             containerRef.current.appendChild(pageDiv);
         }
