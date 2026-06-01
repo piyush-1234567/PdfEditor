@@ -46,6 +46,16 @@ export default function UploadPdf(){
             textContent.items.forEach(item =>{
                 const span = document.createElement("span");
                 span.innerHTML = item.str;
+                span.contentEditable = true;
+                span.style.position = "absolute";
+                
+                const fontSize = item.transform[3]; // font size is in transform[3]
+                span.style.left = `${item.transform[4] * scale}px`;
+                span.style.top = `${viewport.height - item.transform[5] * scale - fontSize}px`;
+                span.style.color = "transparent";
+                span.style.backgroundColor = "transparent";
+                span.style.whiteSpace = "pre";
+                span.style.cursor = "text";
                 pageDiv.appendChild(span);
             })
 
