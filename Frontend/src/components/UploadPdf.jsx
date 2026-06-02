@@ -43,21 +43,23 @@ export default function UploadPdf(){
 
             pageDiv.appendChild(canvas);
             const textContent = await page.getTextContent();
-            textContent.items.forEach(item =>{
-                const span = document.createElement("span");
-                span.innerHTML = item.str;
-                span.contentEditable = true;
-                span.style.position = "absolute";
-                
-                const fontSize = item.transform[3]; // font size is in transform[3]
-                span.style.left = `${item.transform[4] * scale}px`;
-                span.style.top = `${viewport.height - item.transform[5] * scale - fontSize}px`;
-                span.style.color = "transparent";
-                span.style.backgroundColor = "transparent";
-                span.style.whiteSpace = "pre";
-                span.style.cursor = "text";
-                pageDiv.appendChild(span);
-            })
+            const textLayerDiv = document.createElement("div");
+            textLayerDiv.style.position = "absolute";
+            textLayerDiv.style.left = "0";
+            textLayerDiv.style.top = "0";
+            textLayerDiv.style.width = `${viewport.width}px`;
+            textLayerDiv.style.height = `${viewport.height}px`;
+
+            await pdfjsLib.renderTextLayer({
+                textContentSource: textContent,
+                container: textLayerDiv,
+                viewport,
+            }).promise;
+            canvas.style.position = "absolute";
+            canvas.style.left = "0";
+            canvas.style.top = "0";
+            pageDiv.appendChild(textLayerDiv);
+
 
             containerRef.current.appendChild(pageDiv);
         }
