@@ -39,16 +39,16 @@ This editor performs all operations **locally in the client's browser**. By leve
 
 To keep the UI responsive, the editor follows a **Tri-Layer Rendering** approach:
 
-1.  **Base Layer:** `PDF.js` renders the original PDF pages into a background canvas.
-2.  **Interaction Layer:** A transparent React-based SVG/Canvas overlay captures user inputs (drawings, text).
-3.  **Merge Engine:** Upon export, `pdf-lib` maps the coordinates from the interaction layer onto the actual PDF coordinate system to generate the final file.
+1. **Base Layer:** `PDF.js` renders the original PDF pages into a background canvas.
+2. **Interaction Layer:** A transparent React-based SVG/Canvas overlay captures user inputs (drawings, text).
+3. **Merge Engine:** Upon export, `pdf-lib` maps the coordinates from the interaction layer onto the actual PDF coordinate system to generate the final file.
 
 ---
 
 ## 🛠️ Tech Stack
 
 | Layer | Technology | Purpose |
-|---|---|---|
+| :--- | :--- | :--- |
 | **Frontend** | React 18 | UI and component management |
 | **Styling** | Tailwind CSS | Modern, responsive, and utility-first UI |
 | **PDF Rendering** | PDF.js | Displaying PDF pages in the browser |
@@ -73,29 +73,37 @@ pdf-editor/
 │   └── main.jsx
 ├── package.json
 └── README.md
+```
 
-🏃 Getting Started
-Prerequisites
-Node.js (v16.x or higher)
+---
 
-npm or yarn
+## 🏃 Getting Started
 
-Installation
-Clone the repository
+### Prerequisites
 
-Bash
-git clone [https://github.com/your-username/pdf-editor.git](https://github.com/your-username/pdf-editor.git)
+- Node.js (v16.x or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/your-username/pdf-editor.git
 cd pdf-editor
-
+```
 
 2. **Install dependencies**
-   ```bash
-   npm install
-Run the development server
 
-Bash
+```bash
+npm install
+```
+
+3. **Run the development server**
+
+```bash
 npm run dev
-
+```
 
 ---
 
